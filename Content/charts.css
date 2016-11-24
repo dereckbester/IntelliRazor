@@ -1,0 +1,82 @@
+    .ct-chart-pie {
+        position: relative;
+    }
+    
+    .ct-legend {
+        position: relative;
+        z-index: 10;
+        list-style: none;
+        text-align: left;
+    }
+    
+    .ct-legend li {
+        position: relative;
+        padding-left: 23px;
+        margin-right: 10px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        display: inline-block;
+    }
+    
+    .ct-legend li:before {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 0;
+        content: '';
+        border: 3px solid transparent;
+        border-radius: 2px;
+    }
+    
+    .ct-legend li.inactive:before {
+        background: transparent;
+    }
+    
+    .ct-legend.ct-legend-inside {
+        position: absolute;
+        top: 0;
+        right: 16px;
+    }
+    
+    .ct-legend.ct-legend-inside li {
+        display: block;
+        margin: 0;
+    }
+    
+    .ct-legend .ct-series-0:before {
+        background-color: #149bdf;
+        border-color: #149bdf;
+    }
+    
+    .ct-legend .ct-series-1:before {
+        background-color: #d2d6de;
+        border-color: #d2d6de;
+    }
+    
+    .ct-series-a .ct-slice-donut {
+        stroke: #149bdf !important;
+    }
+    
+    .ct-series-b .ct-slice-donut {
+        stroke: #d2d6de !important;
+    }
+    
+    .chartist-tooltip {
+        background: #444 !important;
+        color: #FFF !important;
+    }
+    
+    .chartist-tooltip:before {
+        border-top-color: #444 !important;
+    }
+    
+    .chartist-tooltip.tooltip-show {
+        opacity: 0.9 !important;
+    }
+    
+    .ct-label {
+        fill: #444 !important;
+        font-size: 1.4rem !important;
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 1) !important;
+        font-weight: 700 !important;
+    }

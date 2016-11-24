@@ -18,6 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="~/Content/chartist-js/chartist.min.css">
+    <link rel="stylesheet" href="~/Content/charts.css">
     <link rel="stylesheet" href="~/Content/chartist-js/chartist-plugin-tooltip.css">
     <script src="~/Content/chartist-js/chartist.min.js"></script>
     <script src="~/Content/chartist-js/chartist-plugin-tooltip.min.js"></script>
