@@ -18,6 +18,7 @@ End Code
 @Section Scripts
 <script>
     function ValidateSMS(e) {
+        hideAlert();
         // event.type must be keypress
         if (e.which == null) {
             ValidateSMSChar(e, String.fromCharCode(e.keyCode)) // IE
