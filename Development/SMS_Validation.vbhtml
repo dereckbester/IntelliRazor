@@ -7,6 +7,7 @@ End Code
 <div class="page-header">
     <h1>SMS Validation - Limit Characters</h1>
 </div>
+@RenderPage("~/Views/Partials/Alerts.vbhtml")
 <form>
     <div class="form-group">
         <label for="SMSMessage">SMS Message</label>
@@ -18,7 +19,7 @@ End Code
 @Section Scripts
 <script>
     function ValidateSMS(e) {
-        //hideAlert();
+        hideAlert();
         // event.type must be keypress
         if (e.which == null) {
             ValidateSMSChar(e, String.fromCharCode(e.keyCode)) // IE

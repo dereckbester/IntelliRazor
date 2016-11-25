@@ -7,8 +7,6 @@
 }
 
 function showAlert(Type, Msg) {
-    hideAlert();
-
     switch (Type) {
         case "success":
             var el = document.getElementById("alert-success");
