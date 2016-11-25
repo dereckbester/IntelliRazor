@@ -22,7 +22,11 @@
 <body>
     @RenderPage("~/Views/Nav.vbhtml")
 
-    @RenderBody()
+    <div class="container">
+
+        @RenderBody()
+
+    </div>
 
     @RenderPage("~/Views/Footer.vbhtml")
 

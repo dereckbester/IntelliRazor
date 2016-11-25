@@ -56,6 +56,10 @@ a:hover, a:focus {
     color: lime !important;
 }
 
+a.active, a.active {
+    color: lime !important;
+}
+
 .navbar-brand {
     color: lime !important;
 }

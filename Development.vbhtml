@@ -1,10 +1,9 @@
 ﻿@Code
-    Layout = "~/Views/_SiteLayout.vbhtml"
-    PageData("Title") = "SMS Validation"
+    Layout = "~/Views/_DevLayout.vbhtml"
+    PageData("Title") = "Development"
 End Code
 
 <!-- Begin page content -->
-<div class="container">
     <div class="page-header">
         <h1>SMS Validation - Limit Characters</h1>
     </div>
@@ -15,10 +14,9 @@ End Code
         </div>
         <button type="button" onclick="CheckChars(event);" class="btn btn-default pull-right">Send SMS</button>
     </form>
-</div>
 
 @Section Scripts
-<script>
+    <script>
     function ValidateSMS(e) {
         // event.type must be keypress
         if (e.which == null) {
@@ -67,5 +65,5 @@ End Code
             return false;
         }
     }
-</script>
+    </script>
 End Section

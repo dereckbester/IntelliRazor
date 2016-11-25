@@ -13,6 +13,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a class="menuItem" href="~/Index"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
+                <li><a class="menuItem" href="~/Development"><i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Development</a></li>
                 @*<li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>*@
                 <li class="dropdown">

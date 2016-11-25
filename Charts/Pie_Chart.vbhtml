@@ -4,17 +4,14 @@
 End Code
 
 <!-- Begin page content -->
-<div class="container">
-    <div class="page-header">
-        <h1>Chartist - Pie Chart</h1>
-    </div>
+<div class="page-header">
+    <h1>Chartist - Pie Chart</h1>
+</div>
 
-    <div class="row">
-        <div class="col-lg-12 ">
-            <div class="ct-chart-pie"></div>
-        </div>
+<div class="row">
+    <div class="col-lg-12 ">
+        <div class="ct-chart-pie"></div>
     </div>
-    
 </div>
 
 @Section Scripts
