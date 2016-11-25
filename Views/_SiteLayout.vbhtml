@@ -20,7 +20,6 @@
     <![endif]-->
 </head>
 <body>
-
     @RenderPage("~/Views/Nav.vbhtml")
 
     @RenderBody()
