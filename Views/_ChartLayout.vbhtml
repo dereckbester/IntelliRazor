@@ -9,7 +9,9 @@
 
     <!-- Bootstrap -->
     <link href="~/css/Themes/Slate.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/css/custom.css" rel="stylesheet">
+
     <!-- Charts CSS -->
     <link rel="stylesheet" href="~/Content/chartist-js/chartist.min.css">
     <link rel="stylesheet" href="~/Content/charts.css">
