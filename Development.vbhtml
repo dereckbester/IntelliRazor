@@ -5,15 +5,11 @@ End Code
 
 <!-- Begin page content -->
     <div class="page-header">
-        <h1>SMS Validation - Limit Characters</h1>
+        <h1>Developer Playground</h1>
     </div>
-    <form>
-        <div class="form-group">
-            <label for="SMSMessage">SMS Message</label>
-            <textarea name="SMSMessage" id="SMSMessage" class="form-control" rows="3" onkeypress="ValidateSMS(event);" onkeydown="ValidateSpecial(event);" onpaste="return false;" pattern="^[a-zA-Z0-9]+$" cols="50"></textarea>
-        </div>
-        <button type="button" onclick="CheckChars(event);" class="btn btn-default pull-right">Send SMS</button>
-    </form>
+    <code>
+        alert("hi");
+    </code>
 
 @Section Scripts
     <script>
