@@ -12,10 +12,6 @@ End Code
         <div class="form-group">
             <label for="SMSMessage">SMS Message</label>
             <textarea name="SMSMessage" id="SMSMessage" class="form-control" rows="3" onkeypress="ValidateSMS(event);" onkeydown="ValidateSpecial(event);" onpaste="return false;" pattern="^[a-zA-Z0-9]+$" cols="50"></textarea>
-            @*<p>
-                <span id="remaining">160 characters remaining</span><br />
-                <span id="messages">1 message(s)</span>
-            </p>*@
         </div>
         <button type="button" onclick="CheckChars(event);" class="btn btn-default pull-right">Send SMS</button>
     </form>
@@ -24,8 +20,6 @@ End Code
 @Section Scripts
 <script>
     function ValidateSMS(e) {
-        //console.warn("ValidateSMS");
-        //console.log(e);
         // event.type must be keypress
         if (e.which == null) {
             ValidateSMSChar(e, String.fromCharCode(e.keyCode)) // IE
@@ -37,7 +31,6 @@ End Code
     }
 
     function ValidateSMSChar(e, key) {
-        //console.warn("ValidateSMSChar");
         var pat = /^[\s ^A-Za-z0-9@@$_\/.',"():;\-=+&%#!?<> \n]+$/g;
         if (pat.test(key) == true) {
             return true;
@@ -49,9 +42,6 @@ End Code
     }
 
     function ValidateSpecial(e) {
-        //console.warn("ValidateSpecial");
-        //console.warn(e);
-
         if ((e.altKey && e.keyCode == 78)) {
             alert("Sorry, that is NOT allowed.");
             e.preventDefault();
@@ -67,10 +57,7 @@ End Code
         }
     }
 
-    
-
     function CheckChars(e) {
-        //console.warn("CheckChars");
         var pat = /^[\s ^A-Za-z0-9@@$_\/.',"():;\-=+&%#!?<> \n]+$/g;
         if (pat.test(document.getElementById('SMSMessage').value) == true) {
             return true;
