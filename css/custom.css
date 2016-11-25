@@ -24,10 +24,8 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff484e55', endColorstr='#ff313539', GradientType=0);
     -webkit-filter: none;
     filter: none;
-
-    border-top: 1px solid rgba(0,0,0,0.6);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
+
 
 /* Custom page CSS
 -------------------------------------------------- */

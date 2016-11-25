@@ -12,13 +12,13 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="menuItem" href="~/Index">Home</a></li>
+                <li><a class="menuItem" href="~/Index"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li>
                 @*<li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>*@
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tests <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Tests <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="~/Tests/SMS_Validation" class="menuItem">SMS Validation</a></li>
+                        <li><a href="~/Tests/SMS_Validation" class="menuItem"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;SMS Validation</a></li>
                         @*<li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
@@ -28,9 +28,9 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chartist <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Charts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="~/Charts/Pie_Chart" class="menuItem">Pie Chart</a></li>
+                        <li><a href="~/Charts/Pie_Chart" class="menuItem"><i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;Pie Chart</a></li>
                     </ul>
                 </li>
             </ul>
