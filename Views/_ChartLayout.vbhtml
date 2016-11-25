@@ -10,6 +10,10 @@
     <!-- Bootstrap -->
     <link href="~/css/Themes/Slate.min.css" rel="stylesheet">
     <link href="~/css/custom.css" rel="stylesheet">
+    <!-- Charts CSS -->
+    <link rel="stylesheet" href="~/Content/chartist-js/chartist.min.css">
+    <link rel="stylesheet" href="~/Content/charts.css">
+    <link rel="stylesheet" href="~/Content/chartist-js/chartist-plugin-tooltip.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,9 +21,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="~/Content/chartist-js/chartist.min.css">
-    <link rel="stylesheet" href="~/Content/charts.css">
-    <link rel="stylesheet" href="~/Content/chartist-js/chartist-plugin-tooltip.css">
+
+    <!-- Charts JS -->
     <script src="~/Content/chartist-js/chartist.min.js"></script>
     <script src="~/Content/chartist-js/chartist-plugin-tooltip.min.js"></script>
     <script src="~/Content/chartist-js/chartist-plugin-legend.js"></script>
@@ -30,16 +33,10 @@
 
     @RenderBody()
 
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">Place sticky footer content here.</p>
-        </div>
-    </footer>
+    @RenderPage("~/Views/Footer.vbhtml")
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery, Bootstrap & Other plugins -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/js/bootstrap.min.js"></script>
 
     @RenderSection("Scripts", required:=False)

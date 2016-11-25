@@ -6,7 +6,7 @@ End Code
 <!-- Begin page content -->
 <div class="container">
     <div class="page-header">
-        <h1>SMS Validation - Test</h1>
+        <h1>SMS Validation - Limit Characters</h1>
     </div>
     <form>
         <div class="form-group">
