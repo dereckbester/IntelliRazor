@@ -6,7 +6,7 @@ html {
 }
 body {
     margin-bottom: 60px;
-    /*background: #e6e6e6;*/
+    background: #e6e6e6;
 }
 .footer {
     position: absolute;
@@ -14,18 +14,9 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    /*background-color: #f5f5f5;*/
-    /* Stuffs */
-    background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
-    background-image: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#484e55), color-stop(60%, #3a3f44), to(#313539));
-    background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
-    background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff484e55', endColorstr='#ff313539', GradientType=0);
-    -webkit-filter: none;
-    filter: none;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e7e7e7;
 }
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -45,35 +36,4 @@ body > .container {
 
 code {
   font-size: 80%;
-}
-
-/* Navigation */
-a {
-    color: #062 !important;
-}
-
-a:hover, a:focus {
-    color: lime !important;
-}
-
-a.active, a.active {
-    color: lime !important;
-}
-
-.navbar-brand {
-    color: lime !important;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #062 !important;
-}
-
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: lime !important;
-    background-color: #272b2e;
-}
-
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-    color: lime !important;
-    background-color: #272b2e;
 }
