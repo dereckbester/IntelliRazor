@@ -61,7 +61,7 @@ End Code
 
     <div class="pull-left" style="width:190px; margin-right: 5px;">
         <div class="input-group date">
-            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" placeholder="Select Date To">
+            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" placeholder="Select Date To" disabled>
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
         </div>
     </div>
@@ -80,39 +80,34 @@ End Code
 @Section Scripts
     <script src="~/Content/bs-datepicker/js/bootstrap-datepicker.js"></script>
     <script>
-        //function showUser() { }
+        var TodayDate = new Date("@Date.Today.ToString("yyyy-MM-dd")");
 
-        $(function () {
-            $('[name="FromDate"]').datepicker({
+        $('[name="FromDate"]').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            endDate: TodayDate
+        }).on("changeDate", function (e) {
+            var selectedDate = new Date(e.date);
+            var minDate = new Date();
+            minDate.setDate(selectedDate.getDate() - 7);
+            var maxDate = new Date();
+            maxDate.setDate(selectedDate.getDate() + 7);
+
+            var ToDate = $('[name="ToDate"]');
+            ToDate.prop("disabled", false);
+            ToDate.datepicker({
                 format: "yyyy-mm-dd",
+                //weekStart: 1,
+                startDate: startDate - 7,
+                endDate: ToEndDate + 7,
                 todayHighlight: true,
-                onSelect: function (e) {
-                    alert("selected")
-                    //var date = $('[name="FromDate"]').datepicker('getDate');
-                    //date.setTime(date.getTime() + (1000 * 60 * 60 * 24 * 6));
-                    //$('[name="ToDate"]').datepicker('option', 'maxDate', date);
-                    //$('[name="ToDate"]').datepicker('option', 'minDate', $('[name="FromDate"]').datepicker('getDate'));
-                    //showUser();
-                },
-                minDate: -90,
-                maxDate: "+1D"
+                autoclose: true
             });
 
-            $('[name="ToDate"]').datepicker({
-                format: "yyyy-mm-dd",
-                todayHighlight: true,
-                //onSelect: showUser,
-                minDate: -90,
-                maxDate: "+1D"
-            });
         });
 
-        //$('#datepicker').on("changeDate", function () {
-        //    $('#my_hidden_input').val(
-        //        $('#datepicker').datepicker('getFormattedDate')
-        //    );
-        //});
-            @*$('.input-group.date').datepicker({
+
+        @*$('.input-group.date').datepicker({
         format: "yyyy-mm-dd",
         multidate: false,
         autoclose: true,
@@ -172,7 +167,7 @@ End Code
         }).on('clearDate', function (selected) {
             $('[name="FromDate"]').datepicker('setEndDate', null);
         });
-            
+
         function ValiDate(el) {
             if ($(el).val() !== "" || $(el).val() !== " ") {
                 console.warn($(el).val());
