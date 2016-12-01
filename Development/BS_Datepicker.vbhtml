@@ -61,7 +61,7 @@ End Code
 
     <div class="pull-left" style="width:190px; margin-right: 5px;">
         <div class="input-group date">
-            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" placeholder="Select Date To" disabled>
+            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" placeholder="Select Date To" disabled data-tooltip>
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
         </div>
     </div>
@@ -96,7 +96,8 @@ End Code
             var FromDate = new Date(e.date);
             var ToDate = new Date(e.date);
 
-            var minDate = addDays(FromDate, -7);
+            //var minDate = addDays(FromDate, -7);  //Not allowing EndDate to be in the past
+            var minDate = addDays(FromDate, 0);
             var maxDate = addDays(ToDate, +7);
 
             var maxDateVal;
@@ -110,6 +111,7 @@ End Code
             //Format Dates 'yyyy-mm-dd'
             var dateFrom = minDate.getFullYear() + "-" + (minDate.getMonth() + 1) + "-" + minDate.getDate();
             var dateTo = maxDateVal.getFullYear() + "-" + (maxDateVal.getMonth() + 1) + "-" + maxDateVal.getDate();
+            //initToDateMessage();    //we only show this message when maxDate exceeds Today's date. inform the user of Date Limitations
 
             //Init EndDate
             initEndDate(dateFrom, dateTo);
@@ -118,8 +120,12 @@ End Code
         //Initialize EndDate - EndDate = (StartDate-7days) > (StartDate+7days)
         function initEndDate(minDate, maxDate) {
             var ToDate = $('[name="ToDate"]');
+            ToDate.datepicker('remove');
             ToDate.val(""); //Clear EndDate
             ToDate.prop("disabled", false); //Enable EndDate when startDate has been selected
+
+            ToDate.prop("title", "We only allow a max period of 7 days and cannot exceed Today's date.")
+
             ToDate.datepicker({
                 format: "yyyy-mm-dd",
                 startDate: minDate, //StartDate - 7days
@@ -127,6 +133,13 @@ End Code
                 todayHighlight: true,
                 autoclose: true
             });
+            ToDate.datepicker('update');
+
+            initTooltip();
+        }
+        
+        function initTooltip() {
+            $('[data-tooltip]').tooltip();
         }
 </script>
 End Section
