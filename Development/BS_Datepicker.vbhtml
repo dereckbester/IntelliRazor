@@ -144,11 +144,12 @@ End Code
 
         function checkToDate() {
             var ToDate = $('[name="ToDate"]');
+            var SubmitFilter = $("#SubmitFilter");
 
             if (ToDate.val() == "" || ToDate.val() == " ") {
-                $("#SubmitFilter").prop("disabled", true);
+                SubmitFilter.prop("disabled", true);
             } else {
-                $("#SubmitFilter").prop("disabled", false);
+                SubmitFilter.prop("disabled", false);
             }
         }
 </script>
