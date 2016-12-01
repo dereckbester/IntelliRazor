@@ -80,98 +80,53 @@ End Code
 @Section Scripts
     <script src="~/Content/bs-datepicker/js/bootstrap-datepicker.js"></script>
     <script>
-        var TodayDate = new Date("@Date.Today.ToString("yyyy-MM-dd")");
+        var TodayDate = new Date("@Date.Today()");
+
+        function addDays(dateObj, numDays) {
+            dateObj.setDate(dateObj.getDate() + numDays);
+            return dateObj;
+        }
 
         $('[name="FromDate"]').datepicker({
             format: "yyyy-mm-dd",
             todayHighlight: true,
+            autoclose: true,
             endDate: TodayDate
         }).on("changeDate", function (e) {
-            var selectedDate = new Date(e.date);
-            var minDate = new Date();
-            minDate.setDate(selectedDate.getDate() - 7);
-            var maxDate = new Date();
-            maxDate.setDate(selectedDate.getDate() + 7);
+            var FromDate = new Date(e.date);
+            var ToDate = new Date(e.date);
 
+            var minDate = addDays(FromDate, -7);
+            var maxDate = addDays(ToDate, +7);
+
+            var maxDateVal;
+
+            //if maxDate newer than Today, limit endDate to Today's Date, otherwise use maxDate 
+            if (maxDate > TodayDate) {
+                maxDateVal = TodayDate;
+            } else {
+                maxDateVal = maxDate;
+            }
+            //Format Dates 'yyyy-mm-dd'
+            var dateFrom = minDate.getFullYear() + "-" + (minDate.getMonth() + 1) + "-" + minDate.getDate();
+            var dateTo = maxDateVal.getFullYear() + "-" + (maxDateVal.getMonth() + 1) + "-" + maxDateVal.getDate();
+
+            //Init EndDate
+            initEndDate(dateFrom, dateTo);
+        });
+
+        //Initialize EndDate - EndDate = (StartDate-7days) > (StartDate+7days)
+        function initEndDate(minDate, maxDate) {
             var ToDate = $('[name="ToDate"]');
-            ToDate.prop("disabled", false);
+            ToDate.val(""); //Clear EndDate
+            ToDate.prop("disabled", false); //Enable EndDate when startDate has been selected
             ToDate.datepicker({
                 format: "yyyy-mm-dd",
-                //weekStart: 1,
-                startDate: startDate - 7,
-                endDate: ToEndDate + 7,
+                startDate: minDate, //StartDate - 7days
+                endDate: maxDate, //StartDate + 7days
                 todayHighlight: true,
                 autoclose: true
             });
-
-        });
-
-
-        @*$('.input-group.date').datepicker({
-        format: "yyyy-mm-dd",
-        multidate: false,
-        autoclose: true,
-        todayHighlight: true,
-        endDate: "@Date.Today.ToString("yyyy-MM-dd")"
-        });
-
-        var startDate = new Date('01/01/2012');
-        var FromEndDate = new Date();
-        var ToEndDate = "@Date.Today.ToString("yyyy-MM-dd")"
-
-        //ToEndDate.setDate(ToEndDate.getDate() + 365);
-
-        $('[name="FromDate"]').datepicker({
-            format: "yyyy-mm-dd",
-            //weekStart: 1,
-            //startDate: '01/01/2012',
-            endDate: FromEndDate,
-            todayHighlight: true,
-            autoclose: true
-        }).on('changeDate', function (selected) {
-                startDate = new Date(selected.date.valueOf());
-                startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
-                $('[name="ToDate"]').datepicker('setStartDate', startDate);
-        });
-
-        $('[name="ToDate"]').datepicker({
-            format: "yyyy-mm-dd",
-            //weekStart: 1,
-            startDate: startDate - 7,
-            endDate: ToEndDate + 7,
-            todayHighlight: true,
-            autoclose: true
-        }).on('changeDate', function (selected) {
-            FromEndDate = new Date(selected.date.valueOf());
-            FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
-            $('[name="FromDate"]').datepicker('setEndDate', FromEndDate);
-        });
-
-        $('[name="FromDate"]').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true,
-            endDate: "@Date.Today.ToString("yyyy-MM-dd")"
-        }).on('changeDate', function (selected) {
-            var startDate = new Date(selected.date.valueOf());
-            $('[name="ToDate"]').datepicker('setStartDate', startDate);
-        }).on('clearDate', function (selected) {
-            $('[name="ToDate"]').datepicker('setStartDate', null);
-        });
-
-        $('[name="ToDate"]').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true,
-        }).on('changeDate', function (selected) {
-            var endDate = new Date(selected.date.valueOf());
-            $('[name="FromDate"]').datepicker('setEndDate', endDate);
-        }).on('clearDate', function (selected) {
-            $('[name="FromDate"]').datepicker('setEndDate', null);
-        });
-
-        function ValiDate(el) {
-            if ($(el).val() !== "" || $(el).val() !== " ") {
-                console.warn($(el).val());
-            }
-        }*@
+        }
 </script>
 End Section
