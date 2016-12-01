@@ -61,7 +61,7 @@ End Code
 
     <div class="pull-left" style="width:190px; margin-right: 5px;">
         <div class="input-group date">
-            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" placeholder="Select Date To" disabled data-tooltip>
+            <input type="text" class="form-control" name="ToDate" value="@Session("ToDate")" onchange="checkToDate();" title="Please select From Date to activate the datepicker." placeholder="Select Date To" data-tooltip>
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
         </div>
     </div>
@@ -72,7 +72,7 @@ End Code
         <button type="button" onclick="NextDay();" class="btn btn-default" data-tooltip title="Next Day"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" id="SubmitFilter" class="btn btn-primary">Submit</button>
 </form>
 
 
@@ -123,7 +123,7 @@ End Code
             ToDate.datepicker('remove');
             ToDate.val(""); //Clear EndDate
             ToDate.prop("disabled", false); //Enable EndDate when startDate has been selected
-
+            $("#SubmitFilter").prop("disabled", true);
             ToDate.prop("title", "We only allow a max period of 7 days and cannot exceed Today's date.")
 
             ToDate.datepicker({
@@ -140,6 +140,16 @@ End Code
         
         function initTooltip() {
             $('[data-tooltip]').tooltip();
+        }
+
+        function checkToDate() {
+            var ToDate = $('[name="ToDate"]');
+
+            if (ToDate.val() == "" || ToDate.val() == " ") {
+                $("#SubmitFilter").prop("disabled", true);
+            } else {
+                $("#SubmitFilter").prop("disabled", false);
+            }
         }
 </script>
 End Section
