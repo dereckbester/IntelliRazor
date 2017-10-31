@@ -31,6 +31,14 @@
                     <a class="dropdown-item" href="~/RazorCode">Code</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    jQuery
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="~/jquery-plugin">Custom Plugin</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
