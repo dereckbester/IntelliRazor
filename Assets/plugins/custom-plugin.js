@@ -5,7 +5,7 @@
 */
 (function ($) {
     $.fn.extend({
-        //plugin name - animatemenu
+        //plugin name - Loader
         Loader: function (options) {
             var defaults = {
                 text: "&nbsp; Loading...",
@@ -28,28 +28,36 @@
 
                 elem.html(markup)
             });
-
-            /*return this.each(function () {
-                var o = options;
-                var obj = $(this);
-
-                //obj.html(El)
-                var items = $("li", obj);
-
-                $("li:even", obj).css('background-color', o.evenColor);
-                $("li:odd", obj).css('background-color', o.oddColor);
-
-                items.mouseover(function () {
-                    $(this).animate({ paddingLeft: o.animatePadding }, 300);
-
-                }).mouseout(function () {
-                    $(this).animate({ paddingLeft: o.defaultPadding }, 300);
-
-                });
-            });*/
         }
     });
 })(jQuery);
+
+/*
+var animateMenu = function(options) {
+
+            var defaults = {
+                animatePadding: 60,
+                defaultPadding: 10,
+            };
+			
+            var options = $.extend(defaults, options);
+		
+            return this.each(function() {
+                var o = options;
+                var obj = $(this);				
+                var items = $("li", obj);
+                //console.warn(items);
+				  
+                items.mouseover(function () {
+                    //console.warn("mouseover");
+                    $(this).animate({paddingTop: o.animatePadding}, 300);
+                }).mouseout(function () {
+                    //console.warn("mouseout");
+                    $(this).animate({ paddingTop: o.defaultPadding }, 300);
+                });
+            });
+        }
+*/
 
 /*(function ($) {
     $.fn.extend({
