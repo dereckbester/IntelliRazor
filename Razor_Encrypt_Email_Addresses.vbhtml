@@ -2,7 +2,7 @@
     'Dim myTime = DateTime.Now.TimeOfDay
     Dim newText As string = ""
     
-    Dim senText As String = "This is a long string that we will try dereckbester@gmail.co.za to extract the email address from, it might exist anywhere in this string."
+    Dim senText As String = "This is a long string that we will try testingaddress@gmail.co.za to extract the email address from, it might exist anywhere in this string."
     Dim emailRegEx As New Regex("(\S+)@([^\.\s]+)(?:\.([^\.\s]+))+")
     Dim m As Match = emailRegEx.Match(senText)
     If m.Success Then
