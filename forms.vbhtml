@@ -205,7 +205,6 @@ End Code
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-
 @Section Scripts
 
 End Section

@@ -335,7 +335,6 @@ End Code
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-
 @Section Scripts
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
