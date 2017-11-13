@@ -1,6 +1,6 @@
 ﻿@Code
     Layout = "~/Views/_Base.vbhtml"
-    PageData("Title") = "Home Page"
+    PageData("Title") = "Login"
 End Code
 
 <div class="container">

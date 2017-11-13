@@ -1,6 +1,6 @@
 ﻿@Code
     Layout = "~/Views/_Main.vbhtml"
-    PageData("Title") = "Home Page"
+    PageData("Title") = "Buttons"
 End Code
 
 <div class="row">

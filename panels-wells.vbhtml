@@ -1,6 +1,6 @@
 ﻿@Code
     Layout = "~/Views/_Main.vbhtml"
-    PageData("Title") = "Home Page"
+    PageData("Title") = "Panels and Wells"
 End Code
 
 <div class="row">

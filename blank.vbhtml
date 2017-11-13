@@ -1,6 +1,6 @@
 ﻿@Code
     Layout = "~/Views/_Main.vbhtml"
-    PageData("Title") = "Home Page"
+    PageData("Title") = "Blank"
 End Code
 
 <div class="container-fluid">
