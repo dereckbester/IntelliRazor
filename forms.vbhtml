@@ -1,6 +1,8 @@
 ﻿@Code
     Layout = "~/Views/_Main.vbhtml"
     PageData("Title") = "Forms"
+
+    Validation.RequireField("optionsRadios")
 End Code
 
 <div class="row">
