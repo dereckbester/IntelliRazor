@@ -309,7 +309,7 @@ End Code
                             <div class="modal-body">
                                 <p>Please enter your statement balance <B>PER STORE</B> for for:</p>
                                 <h5 class="text-primary"><b>_Test Creditor</b> as at <b>21-Nov-2017</b></h5>
-                                <table class="table-condensed" width="100%">
+                                <table class="table-condensed" style="width:100%;">
                                     <tr>
                                         <td><b>Store Name</b></td>
                                         <td class="text-right"><b>EA System Total</b></td>
@@ -386,7 +386,7 @@ End Code
                                         <div class="media-body">
                                             <p><b>Please Note:</b> There is a variance of <b>615.06</b> between your remittance and the supplier statement:</p>
 
-                                            <table class="table-condensed" width="100%">
+                                            <table class="table-condensed" style="width:100%;">
                                                 <tr>
                                                     <td><b>Store Name</b></td>
                                                     <td class="text-right"><b>EA System Total</b></td>
@@ -735,24 +735,7 @@ End Code
         });
 </script>
 
-<!-- The Script below is for the accordion collapse -->
-<script>
-    $('#accordion').on('show.bs.collapse', function (e) {
-        $(e.target).closest('.panel-default').addClass('panel-primary');
-        $('.collapse').collapse('hide');
-    }).on('hide.bs.collapse', function (e) {
-        $(e.target).closest('.panel-default').removeClass('panel-primary');
-    })
 
-    function toggleChevron(e) {
-        $(e.target)
-            .prev('.panel-heading')
-            .find("i.indicator")
-            .toggleClass('glyphicon-minus glyphicon-plus');
-    }
-    $('#accordion').on('hidden.bs.collapse', toggleChevron);
-    $('#accordion').on('shown.bs.collapse', toggleChevron);
-</script>
 
 
     <!-- Page-Level Demo Scripts - Notifications - Use for reference -->
@@ -911,5 +894,31 @@ End Code
 
             _totalVal.html(parseFloat(total).toFixed(2));
         }
+    </script>
+
+    <!-- The Script below is for the accordion collapse -->
+    <script>
+            /*$('#accordion').on('show.bs.collapse', function (e) {
+                $(e.target).closest('.panel-default').addClass('panel-primary');
+                $('.collapse').collapse('hide');
+            }).on('hide.bs.collapse', function (e) {
+                $(e.target).closest('.panel-default').removeClass('panel-primary');
+            })*/
+
+            function toggleChevron(e) {
+                $(e.target)
+                    .prev('.panel-heading')
+                    .find("i.indicator")
+                    .toggleClass('glyphicon-minus glyphicon-plus');
+            }
+
+            $('#accordion').on('hidden.bs.collapse', function (e) {
+                $(e.target).closest('.panel-default').removeClass('panel-primary');
+                toggleChevron;
+            });
+            $('#accordion').on('shown.bs.collapse', function (e) {
+                $(e.target).closest('.panel-default').addClass('panel-primary');
+                toggleChevron;
+            });
     </script>
 End Section
