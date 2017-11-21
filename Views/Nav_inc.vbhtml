@@ -10,7 +10,22 @@
         <a class="navbar-brand" href="index">IntelliRazor v1.0</a>
     </div>
     <!-- /.navbar-header -->
+    <ul class="nav navbar-top-links navbar-left">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Playground <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-messages">
+                <li>
+                    <a href="~/ModalsTest">
+                        Modals Test
+                    </a>
+                </li>
 
+            </ul>
+            <!-- /.dropdown-menu -->
+        </li>
+    </ul>
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">

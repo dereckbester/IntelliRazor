@@ -1,0 +1,38 @@
+﻿body {
+}
+
+.modal-lg {
+    width: 950px;
+    z-index: 9999;
+}
+
+.modal-backdrop {
+    background-color: #fafafa !important;
+}
+
+    .modal-backdrop.in {
+        opacity: .7;
+    }
+
+.modal-content {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    z-index: 9999;
+}
+
+.smallfield {
+    width: 150px !important;
+}
+
+.mediumfield {
+    width: 285px !important;
+}
+
+.largefield {
+    width: 385px !important;
+}
+
+.fullfield {
+    width: 500px !important;
+}
