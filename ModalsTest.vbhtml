@@ -896,29 +896,32 @@ End Code
         }
     </script>
 
-    <!-- The Script below is for the accordion collapse -->
-    <script>
-            /*$('#accordion').on('show.bs.collapse', function (e) {
+<!-- The Script below is for the accordion collapse -->
+<script>
+    $(function () {
+        $('#accordion').on('show.bs.collapse', function (e) {
+            if (e.target.className.indexOf("panel-collapse") >= 0) {
                 $(e.target).closest('.panel-default').addClass('panel-primary');
-                $('.collapse').collapse('hide');
-            }).on('hide.bs.collapse', function (e) {
-                $(e.target).closest('.panel-default').removeClass('panel-primary');
-            })*/
-
-            function toggleChevron(e) {
-                $(e.target)
-                    .prev('.panel-heading')
-                    .find("i.indicator")
-                    .toggleClass('glyphicon-minus glyphicon-plus');
             }
-
-            $('#accordion').on('hidden.bs.collapse', function (e) {
+            $('.bs.collapse').collapse('hide');
+        }).on('hide.bs.collapse', function (e) {
+            if (e.target.className.indexOf("panel-collapse") >= 0) {
                 $(e.target).closest('.panel-default').removeClass('panel-primary');
-                toggleChevron;
-            });
-            $('#accordion').on('shown.bs.collapse', function (e) {
-                $(e.target).closest('.panel-default').addClass('panel-primary');
-                toggleChevron;
-            });
-    </script>
+            }
+        })
+
+        function toggleChevron(e) {
+            $(e.target)
+                .prev('.panel-heading')
+                .find("i.indicator")
+                .toggleClass('glyphicon-minus glyphicon-plus');
+        }
+        $('#accordion').on('hidden.bs.collapse', function () {
+            toggleChevron;
+        });
+        $('#accordion').on('shown.bs.collapse', function () {
+            toggleChevron;
+        });
+    });
+</script>
 End Section

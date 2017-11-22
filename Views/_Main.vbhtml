@@ -12,7 +12,10 @@
     <title>@PageData("Title") - IntelliRazor</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Datepicker -->
+    <link href="~/Assets/css/datepicker.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="~/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -60,10 +63,10 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="/Assets/js/jquery-1.11.3.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->.
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Assets/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
@@ -71,12 +74,13 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script src="../Scripts/bootstrap-datepicker.js"></script>
+    <script src="/Assets/js/bootstrap-datepicker.js"></script>
     <script defer>
         $('.input-group.date').datepicker({
             autoclose: true,
             todayHighlight: true,
-            format: "d-M-yyyy"
+            format: "d-M-yyyy",
+            container: "body"
         });
 
         function refreshDates(){
