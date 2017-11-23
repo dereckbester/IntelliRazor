@@ -1,52 +1,67 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>IntelliRazor</title>
-
-    <!-- Bootstrap -->
-    <link href="~/Content/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="~/css/custom.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="~/Scripts/html5shiv.min.js"></script>
-      <script src="~/Scripts/respond.min.js"></script>
-    <![endif]-->
-
+    <meta charset="utf-8" />
+    <title>@PageData("Title") - IntelliRazor</title>
+    <link rel="stylesheet" href="~/Content/bootstrap/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    @*<link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="~/Scripts/jquery-1.8.2.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap/js/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    @*<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.8.24.js"></script>
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    @RenderPage("~/Views/Nav.vbhtml")
-
-    <div class="container">
-
-        @RenderBody()
-
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title"><a href="~/">your logo here</a></p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @If WebSecurity.IsAuthenticated Then
+                        @<text>
+                            Hello, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
+                            <form id="logoutForm" action="~/Account/Logout" method="post">
+                                @AntiForgery.GetHtml()
+                                <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+                            </form>
+                        </text>
+                    Else
+                        @<ul>
+                            <li><a href="~/Account/Register">Register</a></li>
+                            <li><a href="~/Account/Login">Log in</a></li>
+                        </ul>
+                    End If
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li><a href="~/">Home</a></li>
+                        <li><a href="~/About">About</a></li>
+                        <li><a href="~/Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required:=False)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
     </div>
-
-    @RenderPage("~/Views/Footer.vbhtml")
-
-    <!-- jQuery, Bootstrap & Other plugins -->
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Content/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script src="~/js/custom.js"></script>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Web Page</p>
+            </div>
+        </div>
+    </footer>
 
     @RenderSection("Scripts", required:=False)
-    <script>
-        $(function () {
-            var pgurl = "@Request.ServerVariables("SCRIPT_NAME")";
-
-            $(".menuItem").each(function () {
-                if (pgurl.toLowerCase() == $(this).attr("href").toLowerCase()) {
-                    $(this).parent().addClass("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>

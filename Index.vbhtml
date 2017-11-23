@@ -1,866 +1,579 @@
 ﻿@Code
-    Layout = "~/Views/_V4.vbhtml"
-    PageData("Title") = "Home"
+    Layout = "~/Views/_Main.vbhtml"
+    PageData("Title") = "Dashboard"
 End Code
 
-<!--wrapper start-->
-<div class="wrapper" id="wrapper">
-
-    
-
-    <!--header-->
-    @*<header>
-        <div class="jumbotron jumbotron-fluid" id="banner">
-            <div class="parallax text-center" style="background-image: url(img/cover.jpg);">
-                <div class="parallax-pattern-overlay">
-                    <div class="container text-center" id="size-banner">
-                        <a href="#"><img id="site-title" src="img/logo.png" alt="logo" /></a>
-                        <h2 class="display-2">Boostrap 4 Beta is here!</h2>
-                        <h3 class="learn">Wanna know how to use it?</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>*@
-
-    <div class="container">
-        <h3>
-            Fancy display heading
-            <small class="text-muted">With faded secondary text</small>
-        </h3>
-
-        <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Check this custom checkbox</span>
-        </label>
-
-        <br />
-
-        <label class="custom-control custom-radio">
-            <input id="radio1" name="radio" type="radio" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Toggle this custom radio</span>
-        </label>
-        <label class="custom-control custom-radio">
-            <input id="radio2" name="radio" type="radio" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Or toggle this other custom radio</span>
-        </label>
-
-        <br />
-
-        <div class="custom-controls-stacked">
-            <label class="custom-control custom-radio">
-                <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Toggle this custom radio</span>
-            </label>
-            <label class="custom-control custom-radio">
-                <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Or toggle this other custom radio</span>
-            </label>
-        </div>
-
-        <br />
-
-        <label class="custom-file">
-            <input type="file" id="file2" class="custom-file-input">
-            <span class="custom-file-control"></span>
-        </label>
-
-        <form class="was-validated">
-            <label class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" required>
-                <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Check this custom checkbox</span>
-            </label>
-
-            <div class="custom-controls-stacked d-block my-3">
-                <label class="custom-control custom-radio">
-                    <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input" required>
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Toggle this custom radio</span>
-                </label>
-                <label class="custom-control custom-radio">
-                    <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input" required>
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Or toggle this other custom radio</span>
-                </label>
-            </div>
-
-            <select class="custom-select d-block my-3" required>
-                <option value="">Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-
-            <label class="custom-file">
-                <input type="file" id="file" class="custom-file-input" required>
-                <span class="custom-file-control"></span>
-            </label>
-        </form>
-
-        <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="alert alert-primary" role="alert">
-            This is a primary alert—check it out!
-        </div>
-        <div class="alert alert-secondary" role="alert">
-            This is a secondary alert—check it out!
-        </div>
-        <div class="alert alert-success" role="alert">
-            This is a success alert—check it out!
-        </div>
-        <div class="alert alert-danger" role="alert">
-            This is a danger alert—check it out!
-        </div>
-        <div class="alert alert-warning" role="alert">
-            This is a warning alert—check it out!
-        </div>
-        <div class="alert alert-info" role="alert">
-            This is a info alert—check it out!
-        </div>
-        <div class="alert alert-light" role="alert">
-            This is a light alert—check it out!
-        </div>
-        <div class="alert alert-dark" role="alert">
-            This is a dark alert—check it out!
-        </div>
-
-        <div class="alert alert-primary" role="alert">
-            This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-secondary" role="alert">
-            This is a secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-success" role="alert">
-            This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-danger" role="alert">
-            This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-warning" role="alert">
-            This is a warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-info" role="alert">
-            This is a info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-light" role="alert">
-            This is a light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-        <div class="alert alert-dark" role="alert">
-            This is a dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
-
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Well done!</h4>
-            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            <hr>
-            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-        </div>
-
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-
-        <h1 class="display-1">Display 1</h1>
-        <h1 class="display-2">Display 2</h1>
-        <h1 class="display-3">Display 3</h1>
-        <h1 class="display-4">Display 4</h1>
-
-        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-        <p><del>This line of text is meant to be treated as deleted text.</del></p>
-        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-        <p><u>This line of text will render as underlined</u></p>
-        <p><small>This line of text is meant to be treated as fine print.</small></p>
-        <p><strong>This line rendered as bold text.</strong></p>
-        <p><em>This line rendered as italicized text.</em></p>
-
-        <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-
-        <blockquote class="blockquote text-center">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-
-        <blockquote class="blockquote text-right">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-
-        <form class="bd-example">
-            <fieldset>
-                <legend>Example legend</legend>
-
-                <p>
-                    <label for="input">Example input</label>
-                    <input type="text" id="input" placeholder="Example input">
-                </p>
-
-                <p>
-                    <label for="select">Example select</label>
-                    <select id="select">
-                        <option value="">Choose...</option>
-                        <optgroup label="Option group 1">
-                            <option value="">Option 1</option>
-                            <option value="">Option 2</option>
-                            <option value="">Option 3</option>
-                        </optgroup>
-                        <optgroup label="Option group 2">
-                            <option value="">Option 4</option>
-                            <option value="">Option 5</option>
-                            <option value="">Option 6</option>
-                        </optgroup>
-                    </select>
-                </p>
-
-                <p>
-                    <label>
-                        <input type="checkbox" value="">
-                        Check this checkbox
-                    </label>
-                </p>
-
-                <p>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Option one is this and that
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
-                        Option three is disabled
-                    </label>
-                </p>
-
-                <p>
-                    <label for="textarea">Example textarea</label>
-                    <textarea id="textarea" rows="3"></textarea>
-                </p>
-
-                <p>
-                    <label for="time">Example temporal</label>
-                    <input type="datetime-local" id="time">
-                </p>
-
-                <p>
-                    <label for="output">Example output</label>
-                    <output name="result" id="output">100</output>
-                </p>
-
-                <p>
-                    <button type="submit">Button submit</button>
-                    <input type="submit" value="Input submit button">
-                    <input type="button" value="Input button">
-                </p>
-
-                <p>
-                    <button type="submit" disabled="">Button submit</button>
-                    <input type="submit" value="Input submit button" disabled="">
-                    <input type="button" value="Input button" disabled="">
-                </p>
-            </fieldset>
-        </form>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                1 of 2
-            </div>
-            <div class="col">
-                2 of 2
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                1 of 3
-            </div>
-            <div class="col">
-                2 of 3
-            </div>
-            <div class="col">
-                3 of 3
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="w-100"></div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                1 of 3
-            </div>
-            <div class="col-6">
-                2 of 3 (wider)
-            </div>
-            <div class="col">
-                3 of 3
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                1 of 3
-            </div>
-            <div class="col-5">
-                2 of 3 (wider)
-            </div>
-            <div class="col">
-                3 of 3
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-2">
-                1 of 3
-            </div>
-            <div class="col-md-auto">
-                Variable width content
-            </div>
-            <div class="col col-lg-2">
-                3 of 3
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                1 of 3
-            </div>
-            <div class="col-md-auto">
-                Variable width content
-            </div>
-            <div class="col col-lg-2">
-                3 of 3
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">col</div>
-            <div class="col">col</div>
-            <div class="w-100"></div>
-            <div class="col">col</div>
-            <div class="col">col</div>
-        </div>
-
-        <div class="row">
-            <div class="col">col</div>
-            <div class="col">col</div>
-            <div class="col">col</div>
-            <div class="col">col</div>
-        </div>
-        <div class="row">
-            <div class="col-8">col-8</div>
-            <div class="col-4">col-4</div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-sm-8">col-sm-8</div>
-            <div class="col-sm-4">col-sm-4</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">col-sm</div>
-            <div class="col-sm">col-sm</div>
-            <div class="col-sm">col-sm</div>
-        </div>
-
-        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-        <div class="row">
-            <div class="col-12 col-md-8">.col-12 .col-md-8</div>
-            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-        </div>
-
-        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-        <div class="row">
-            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-        </div>
-
-        <!-- Columns are always 50% wide, on mobile and desktop -->
-        <div class="row">
-            <div class="col-6">.col-6</div>
-            <div class="col-6">.col-6</div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row align-items-start">
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-        </div>
-        <div class="row align-items-end">
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col align-self-start">
-                One of three columns
-            </div>
-            <div class="col align-self-center">
-                One of three columns
-            </div>
-            <div class="col align-self-end">
-                One of three columns
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                One of two columns
-            </div>
-            <div class="col-4">
-                One of two columns
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-4">
-                One of two columns
-            </div>
-            <div class="col-4">
-                One of two columns
-            </div>
-        </div>
-        <div class="row justify-content-end">
-            <div class="col-4">
-                One of two columns
-            </div>
-            <div class="col-4">
-                One of two columns
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-4">
-                One of two columns
-            </div>
-            <div class="col-4">
-                One of two columns
-            </div>
-        </div>
-        <div class="row justify-content-between">
-            <div class="col-4">
-                One of two columns
-            </div>
-            <div class="col-4">
-                One of two columns
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
-            <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-        </div>
-
-        <div class="row">
-            <div class="col-9">.col-9</div>
-            <div class="col-4">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
-            <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
-        </div>
-
-        <div class="row">
-            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-
-            <!-- Force next columns to break to new line -->
-            <div class="w-100"></div>
-
-            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-            <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-        </div>
-
-        <div class="row">
-            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-
-            <!-- Force next columns to break to new line at md breakpoint and up -->
-            <div class="w-100 d-none d-md-block"></div>
-
-            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-            <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                First, but unordered
-            </div>
-            <div class="col order-12">
-                Second, but last
-            </div>
-            <div class="col order-1">
-                Third, but first
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                First, but unordered
-            </div>
-            <div class="col">
-                Second, but unordered
-            </div>
-            <div class="col order-first">
-                Third, but first
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-            <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
-            <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0</div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-5 col-lg-6">.col.col-sm-6.col-md-5.col-lg-6</div>
-            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
-            <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
-        </div>
-        <div class="row">
-            <div class="col-auto mr-auto">.col-auto .mr-auto</div>
-            <div class="col-auto">.col-auto</div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-9">
-                Level 1: .col-sm-9
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
                 <div class="row">
-                    <div class="col-8 col-sm-6">
-                        Level 2: .col-8 .col-sm-6
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
                     </div>
-                    <div class="col-4 col-sm-6">
-                        Level 2: .col-4 .col-sm-6
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">26</div>
+                        <div>New Comments!</div>
                     </div>
                 </div>
             </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
         </div>
     </div>
-
-    <div class="container">
-        <div class="example-container">
-            <div class="example-row">
-                <div class="example-content-main">Main content</div>
-                <div class="example-content-secondary">Secondary content</div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">12</div>
+                        <div>New Tasks!</div>
+                    </div>
+                </div>
             </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
         </div>
     </div>
-
-    <!--about us-->
-    <section class="aboutus" id="aboutus">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading text-center">
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h2>About Boostrap 4 Beta</h2>
-
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h3><mark>Bootstrap</mark> is the world’s most popular framework for building responsive, mobile-first sites and applications. Inside you’ll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever. On <mark>August 19</mark>, Bootstrap 4 alpha was released with the removal of support for IE8. Of course, there are still going to be a couple of alphas before they move to the beta phase, but this gives us a glimpse on what to expect on the next versions.</h3>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-shopping-cart fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">124</div>
+                        <div>New Orders!</div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/card1.jpg" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">This is Card #1</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card card-inverse card-primary text-center">
-                        <img class="card-img-top" src="img/card2.jpg" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">This is Card #2</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-inverse card-success text-center">
-                        <img class="card-img-top" src="img/card3.jpg" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">This is Card #3</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-inverse card-info text-center">
-                        <img class="card-img-top" src="img/card4.jpg" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">This is Card #4</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
-    </section>
-
-
-    <section class="features" id="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading text-center">
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h2>Enhanced Features</h2>
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h3><a href="#" data-toggle="tooltip" title="This is a tooltip">Bootstrap 4 alpha</a> has a new prefix <a href="#" data-toggle="tooltip" title="Make all backgrounds black!">–inverse</a> class that gives a background to the table itself. Another cool thing about this is the improve tooltips and popovers which help a lot of developers when it comes to ease of use. Thanks to <a href="#" data-toggle="tooltip" title="Tether is a JavaScript library for efficiently making an absolutely positioned element stay next to another element on the page. For example, you might want a tooltip or dialog to open, and remain, next to the relevant item on the page.">Tether</a> , a third party library it has improved. </h3>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-support fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">13</div>
+                        <div>Support Tickets!</div>
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <table class="table table-inverse">
-                        <thead>
-                            <tr><th colspan="3" class="text-center">Bootstrap 3</th> </tr>
-                            <tr>
-                                <th>Size</th>
-                                <th>Device</th>
-                                <th>Class</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Extra Small</td>
-                                <td>Less than 768px</td>
-                                <td>col-xs</td>
-                            </tr>
-                            <tr>
-                                <td>Small</td>
-                                <td>768px and up</td>
-                                <td>col-sm</td>
-                            </tr>
-                            <tr>
-                                <td>Medium</td>
-                                <td>992px and up</td>
-                                <td>col-md</td>
-                            </tr>
-                            <tr>
-                                <td>Large</td>
-                                <td>1200px and up</td>
-                                <td>col-lg</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
                 </div>
-
-                <div class="col-md-6">
-                    <table class="table table-inverse">
-                        <thead>
-                            <tr><th colspan="3" class="text-center">Bootstrap 4</th> </tr>
-                            <tr>
-                                <th>Size</th>
-                                <th>Device</th>
-                                <th>Class</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Extra Small</td>
-                                <td>Less than 34em</td>
-                                <td>col-xs</td>
-                            </tr>
-                            <tr>
-                                <td>Small</td>
-                                <td>34em and up</td>
-                                <td>col-sm</td>
-                            </tr>
-                            <tr>
-                                <td>Medium</td>
-                                <td>48em and up</td>
-                                <td>col-md</td>
-                            </tr>
-                            <tr>
-                                <td>Large</td>
-                                <td>62em and up</td>
-                                <td>col-lg</td>
-                            </tr>
-                            <tr>
-                                <td>Extra Large</td>
-                                <td>75em and up</td>
-                                <td>col-xl</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            </a>
         </div>
-    </section>
-
-
-    <!--Contact Us-->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h2>Contact Us</h2>
-                        <img class="dividerline" src="img/sep.png" alt="">
-                        <h3>
-                            Feel free to reach out for any questions!
-                        </h3>
+    </div>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Actions
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
+            </div>
+            <!-- /.panel-body -->
         </div>
-        <div class="container mx-width">
-            <div class="row">
-                <div class="done">
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        Your message has been sent. Thank you!
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Actions
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <form>
-                        <fieldset class="form-group">
-                            <input type="text" class="form-control" id="Name" placeholder="Name">
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <input type="email" class="form-control" id="Email" placeholder="Email">
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                        </fieldset>
-                        <button type="submit" class="contact submit">Submit</button>
-                    </form>
-                </div>
             </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3326</td>
+                                        <td>10/21/2013</td>
+                                        <td>3:29 PM</td>
+                                        <td>$321.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3325</td>
+                                        <td>10/21/2013</td>
+                                        <td>3:20 PM</td>
+                                        <td>$234.34</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3324</td>
+                                        <td>10/21/2013</td>
+                                        <td>3:03 PM</td>
+                                        <td>$724.17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3323</td>
+                                        <td>10/21/2013</td>
+                                        <td>3:00 PM</td>
+                                        <td>$23.71</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3322</td>
+                                        <td>10/21/2013</td>
+                                        <td>2:49 PM</td>
+                                        <td>$8345.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3321</td>
+                                        <td>10/21/2013</td>
+                                        <td>2:23 PM</td>
+                                        <td>$245.12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3320</td>
+                                        <td>10/21/2013</td>
+                                        <td>2:15 PM</td>
+                                        <td>$5663.54</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3319</td>
+                                        <td>10/21/2013</td>
+                                        <td>2:13 PM</td>
+                                        <td>$943.45</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+                    <div class="col-lg-8">
+                        <div id="morris-bar-chart"></div>
+                    </div>
+                    <!-- /.col-lg-8 (nested) -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
         </div>
-    </section>
-
-    <!--footer-->
-    <section class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                <p>
+                                    <small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge warning">
+                            <i class="fa fa-credit-card"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge danger">
+                            <i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates est quaerat asperiores sapiente, eligendi, nihil. Itaque quos, alias sapiente rerum quas odit! Aperiam officiis quidem delectus libero, omnis ut debitis!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge info">
+                            <i class="fa fa-save"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
+                                <hr>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-gear"></i> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fuga odio quibusdam. Iure expedita, incidunt unde quis nam! Quod, quisquam. Officia quam qui adipisci quas consequuntur nostrum sequi. Consequuntur, commodi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge success">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt obcaecati, quaerat tempore officia voluptas debitis consectetur culpa amet, accusamus dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque eaque.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bell fa-fw"></i> Notifications Panel
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-comment fa-fw"></i> New Comment
+                        <span class="pull-right text-muted small">
+                            <em>4 minutes ago</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                        <span class="pull-right text-muted small">
+                            <em>12 minutes ago</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-envelope fa-fw"></i> Message Sent
+                        <span class="pull-right text-muted small">
+                            <em>27 minutes ago</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-tasks fa-fw"></i> New Task
+                        <span class="pull-right text-muted small">
+                            <em>43 minutes ago</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                        <span class="pull-right text-muted small">
+                            <em>11:32 AM</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                        <span class="pull-right text-muted small">
+                            <em>11:13 AM</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                        <span class="pull-right text-muted small">
+                            <em>10:57 AM</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                        <span class="pull-right text-muted small">
+                            <em>9:49 AM</em>
+                        </span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-money fa-fw"></i> Payment Received
+                        <span class="pull-right text-muted small">
+                            <em>Yesterday</em>
+                        </span>
+                    </a>
+                </div>
+                <!-- /.list-group -->
+                <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
+            </div>
+            <div class="panel-body">
+                <div id="morris-donut-chart"></div>
+                <a href="#" class="btn btn-default btn-block">View Details</a>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="chat-panel panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-comments fa-fw"></i> Chat
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu slidedown">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-refresh fa-fw"></i> Refresh
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-check-circle fa-fw"></i> Available
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-times fa-fw"></i> Busy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-clock-o fa-fw"></i> Away
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                            </a>
+                        </li>
                     </ul>
-                    <p>
-                        &copy; 2015 - Designmodo.com<br>
-                    </p>
                 </div>
             </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <ul class="chat">
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">Jack Sparrow</strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                </small>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="right clearfix">
+                        <span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <small class=" text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i> 13 mins ago
+                                </small>
+                                <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">Jack Sparrow</strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
+                                </small>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="right clearfix">
+                        <span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <small class=" text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i> 15 mins ago
+                                </small>
+                                <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.panel-body -->
+            <div class="panel-footer">
+                <div class="input-group">
+                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-warning btn-sm" id="btn-chat">
+                            Send
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <!-- /.panel-footer -->
         </div>
-    </section>
-
-</div><!--wrapper end-->
+        <!-- /.panel .chat-panel -->
+    </div>
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
+@section Scripts
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+End Section
