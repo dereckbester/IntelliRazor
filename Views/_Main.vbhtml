@@ -62,19 +62,17 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
+
     <!-- jQuery -->
-    <script src="/Assets/js/jquery-1.11.3.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->.
-    <script src="/Assets/js/bootstrap.min.js"></script>
-
+    <script src="../Assets/js/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../Assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script src="/Assets/js/bootstrap-datepicker.js"></script>
+    <script src="../Assets/js/bootstrap-datepicker.js"></script>
     <script defer>
         $('.input-group.date').datepicker({
             autoclose: true,
