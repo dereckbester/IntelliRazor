@@ -78,11 +78,17 @@ End Code
                                 End If
                             End Code
                             <form id="myForm" method="post" enctype="multipart/form-data" action="">
-                                <div class="form-group">
-                                    <label>File input</label>
-                                    <input type="file" accept="" name="FileUpload">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                        <span class="btn btn-primary">
+                                            Browse&hellip; <input type="file" name="FileUpload" style="display: none;" multiple>
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                    <label class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary">Upload File</button>
+                                    </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-sm">Upload File</button>
                             </form>
                         </div>
                     </div>
@@ -110,7 +116,7 @@ End Code
                             <thead>
                                 <tr>
                                     <th>File Name</th>
-                                    @*<th>Path</th>*@
+                                    <th>File Type</th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -120,7 +126,8 @@ End Code
                                         Dim FileName = System.IO.Path.GetFileName(File)
                                 End Code
                                 <tr>
-                                    <td>@FileName</td>
+                                    <td>@FileName &nbsp;<a href="#" onclick="return false;" data-toggle="tooltip" title="Rename File"><i class="fa fa-pencil"></i></a></td>
+                                    <td>@Path.GetExtension(FileName)</td>
                                     @*<td>@File</td>*@
                                     <td class="text-right">
                                         <a href="~/FilesDelete?FileName=@HttpUtility.UrlEncode(FileName)" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete File">
@@ -156,6 +163,34 @@ End Code
 
 @section Scripts
     <script>
-        $('[data-toggle="tooltip"]').tooltip();
+        $(function () {
+
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // We can attach the `fileselect` event to all file inputs on the page
+            $(document).on('change', ':file', function () {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+            });
+
+            // We can watch for our custom `fileselect` event like this
+            $(document).ready(function () {
+                $(':file').on('fileselect', function (event, numFiles, label) {
+
+                    var input = $(this).parents('.input-group').find(':text'),
+                        log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                    if (input.length) {
+                        input.val(log);
+                    } else {
+                        if (log) alert(log);
+                    }
+
+                });
+            });
+
+        });
     </script>
 End Section
