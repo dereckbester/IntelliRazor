@@ -23,16 +23,12 @@
             Dim fileSavePath = ""
             Dim uploadedFile = Request.Files("FileUpload")
 
-
             fileName = Path.GetFileName(uploadedFile.FileName)
             fileSavePath = Server.MapPath("~/App_Data/" & FilesDirectory & "/" & fileName)
             If (File.Exists(fileSavePath)) Then
                 'File exists
                 Message = "File already exists."
                 MessageClass = "alert-warning"
-                '
-                'File.Delete(fullPath)
-                'deleteSuccess = True
             Else
                 'File does not exist, continue with upload
                 uploadedFile.SaveAs(fileSavePath)
@@ -56,8 +52,6 @@
         FileList = Nothing
         FileListCount = 0
     End Try
-
-
 End Code
 
 <div class="container-fluid">
