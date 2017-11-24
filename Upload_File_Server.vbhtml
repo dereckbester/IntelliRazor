@@ -126,7 +126,7 @@ End Code
                                         Dim FileName = System.IO.Path.GetFileName(File)
                                 End Code
                                 <tr>
-                                    <td>@FileName &nbsp;<a href="#" onclick="return false;" data-toggle="tooltip" title="Rename File"><i class="fa fa-pencil"></i></a></td>
+                                    <td>@FileName &nbsp;<a href="#" onclick="FileRename('@HttpUtility.UrlEncode(FileName)'); return false;" data-toggle="tooltip" title="Rename File"><i class="fa fa-pencil"></i></a></td>
                                     <td>@Path.GetExtension(FileName)</td>
                                     @*<td>@File</td>*@
                                     <td class="text-right">
@@ -156,6 +156,16 @@ End Code
             <!-- /.panel -->
         </div>
         <!-- /.col-lg-12 -->
+
+        <!-- Rename File Modal -->
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="RenameFile">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
     </div>
     <!-- /.row -->
 </div>
@@ -163,6 +173,26 @@ End Code
 
 @section Scripts
     <script>
+        var _Loader = "<p class='text-center' style='padding: 20px; margin: 0;'><i class='fa fa-spinner fa-spin'></i> Loading...</p>";
+
+        function FileRename(FileName) {
+            var _El = $("#RenameFile").find(".modal-content");
+            $("#RenameFile").modal("show");
+            var request = $.ajax({
+                method: "GET",
+                dataType: "text",
+                url: "FileManager/RenameFile",
+                data: { FileName: FileName },
+                beforeSend: function () {
+                    _El.html(_Loader);
+                }
+            }).done(function (d) {
+                setTimeout(function () {
+                    _El.html(d);
+                }, 1000); //delay just to show loading element
+            });
+        }
+
         $(function () {
 
             $('[data-toggle="tooltip"]').tooltip();
