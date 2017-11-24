@@ -126,7 +126,7 @@ End Code
                                         Dim FileName = System.IO.Path.GetFileName(File)
                                 End Code
                                 <tr>
-                                    <td>@FileName &nbsp;<a href="#" onclick="FileRename('@HttpUtility.UrlEncode(FileName)'); return false;" data-toggle="tooltip" title="Rename File"><i class="fa fa-pencil"></i></a></td>
+                                    <td>@FileName &nbsp;<a href="#" onclick="FileRename('@HttpUtility.UrlEncode(FileName)', '@HttpUtility.UrlEncode(File)'); return false;" data-toggle="tooltip" title="Rename File"><i class="fa fa-pencil"></i></a></td>
                                     <td>@Path.GetExtension(FileName)</td>
                                     @*<td>@File</td>*@
                                     <td class="text-right">
@@ -175,14 +175,36 @@ End Code
     <script>
         var _Loader = "<p class='text-center' style='padding: 20px; margin: 0;'><i class='fa fa-spinner fa-spin'></i> Loading...</p>";
 
-        function FileRename(FileName) {
+        function FileRename(FileName, FilePath) {
             var _El = $("#RenameFile").find(".modal-content");
             $("#RenameFile").modal("show");
             var request = $.ajax({
                 method: "GET",
                 dataType: "text",
                 url: "FileManager/RenameFile",
-                data: { FileName: FileName },
+                data: { FileName: FileName, FilePath: FilePath, Rename: 0 },
+                beforeSend: function () {
+                    _El.html(_Loader);
+                }
+            }).done(function (d) {
+                setTimeout(function () {
+                    _El.html(d);
+                }, 1000); //delay just to show loading element
+            });
+        }
+
+        function doRenameFile(Rename) {
+            var _El = $("#RenameFile").find(".modal-content");
+            var _FilePath = $("#filePath").val();
+            var _FileName = $("#fileName").val();
+
+            $("#RenameFile").modal("show");
+
+            var request = $.ajax({
+                method: "GET",
+                dataType: "text",
+                url: "FileManager/RenameFile",
+                data: { FileName: _FileName, FilePath: _FilePath, Rename: Rename },
                 beforeSend: function () {
                     _El.html(_Loader);
                 }
