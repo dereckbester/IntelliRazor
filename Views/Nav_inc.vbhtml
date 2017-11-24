@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index">IntelliRazor v1.0</a>
+        <a class="navbar-brand" href="~/Dashboard">IntelliRazor v1.0</a>
     </div>
     <!-- /.navbar-header -->
     <ul class="nav navbar-top-links navbar-left">
@@ -21,7 +21,11 @@
                         Modals Test
                     </a>
                 </li>
-
+                <li>
+                    <a href="~/Upload_File_Server">
+                        File Management
+                    </a>
+                </li>
             </ul>
             <!-- /.dropdown-menu -->
         </li>
@@ -230,7 +234,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <a href="~/Index"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -254,7 +258,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="~/Dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -335,7 +339,7 @@
                             <a href="blank">Blank Page</a>
                         </li>
                         <li>
-                            <a href="login">Login Page</a>
+                            <a href="~/Index">Login Page</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
