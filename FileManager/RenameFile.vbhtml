@@ -14,7 +14,7 @@
 
     If Rename = True Then
         Try
-            FileSystem.Rename(FilePath, FileName)
+            My.Computer.FileSystem.RenameFile(FilePath, FileName)
             Message = "Successfully renamed file."
         Catch ex As Exception
             Message = "Something went wrong while renaming the file."
