@@ -42,7 +42,7 @@
             End If
         Catch ex As Exception
             Message = "Select a file to upload."
-            MessageClass = "alert-info"
+            MessageClass = "alert-warning"
         End Try
     End If
 
