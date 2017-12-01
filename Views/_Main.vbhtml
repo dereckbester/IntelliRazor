@@ -73,6 +73,9 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script src="../Assets/js/bootstrap-datepicker.js"></script>
+    @*Search bar*@
+    <script src="../Scripts/bootstrap3-typeahead.min.js"></script>
+
     <script defer>
         $('.input-group.date').datepicker({
             autoclose: true,
@@ -84,6 +87,79 @@
         function refreshDates(){
             $('.input-group.date').datepicker('update');
         }
+
+        /* Start Search */
+        var $input = $('#globalSearch');
+        $input.typeahead({
+            autoSelect: true,
+            minLength: 3,
+            items: 20,
+            delay: 500,
+            highlight: true,
+            displayKey: 'StoreName',
+            source: function (query, process) {
+                return $.getJSON('_Ajax/Search_Stores', { Search: query },
+                    function (data) {
+                        GUID = {};
+                        Profile = {};
+                        userLabels = [];
+                        //build results dropdown
+                        $.each(data, function () {
+                            var StoreName = this.StoreName
+                            var Search
+                            if (this.Search) {
+                                Search = " (" + this.Search + ")";
+                            } else {
+                                Search = "";
+                            }
+                            userLabels.push(this.StoreName + Search);
+                            GUID[this.StoreName + Search] = this.GUID;
+                            Profile[this.StoreName + Search] = this.Profile;
+                        });
+                        process(userLabels);
+                    });
+            },
+            highlighter: function (item) {
+                var StoreName = item;
+                var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
+                //Highlight search text
+                return item.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+                    return '<strong>' + match + '</strong>'
+                });
+            },
+            updater: function (item) {
+                var StoreGUID = GUID[item];
+                var ProfileGUID = Profile[item];
+
+                var request = $.ajax({
+                    url: "_Ajax/Get_Profile_ID",
+                    dataType: "json",
+                    method: "GET",
+                    data: { ProfileGUID: ProfileGUID },
+                    cache: false,
+                    async: true
+                });
+                request.done(function (data) {
+                    if (data.Success == true) {
+                        var ProfileID = data.ID;
+                        // Process details and proceed to store detail page
+                        storeDetail(StoreGUID, ProfileID, ProfileGUID);
+                        return true;
+
+                    } else if (data.Success == false) {
+                        return false;
+                    }
+                });
+                request.fail(function (jqXHR, textStatus) {
+                    Notification(textStatus, "danger");
+                });
+            }
+        });
+
+        //When search is clicked, process search again.
+        $(document).on("click", "input.typeahead", function () {
+            $(this).trigger("input");
+        });
     </script>
 
     @RenderSection("Scripts", required:=False)

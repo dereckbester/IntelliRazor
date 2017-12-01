@@ -30,7 +30,11 @@
             <!-- /.dropdown-menu -->
         </li>
     </ul>
+
     <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <input type="text" id="globalSearch" class="form-control input-sm typeahead" placeholder="Search..." data-provide="typeahead" autocomplete="off">
+        </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
