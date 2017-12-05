@@ -22,6 +22,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="~/ModalsPureJSTest">
+                        Open Modal with pure JS
+                    </a>
+                </li>
+                <li>
                     <a href="~/Upload_File_Server">
                         File Management
                     </a>
