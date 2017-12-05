@@ -88,78 +88,7 @@
     
 
     <script>
-        (function () {
-            "use strict";
-            var Modal = function (el, options) {
-                var self = this;
-
-                this.el = document.querySelector(el);
-                this.options = options;
-
-                try {
-                    var list = document.querySelectorAll('#' + this.el.id + ' [data-dismiss="modal"]');
-                    for (var x = 0; x < list.length; x++) {
-                        list[x].addEventListener('click', function (e) {
-                            if (e) e.preventDefault();
-                            self.hide();
-                        });
-                    }
-                }
-                catch (e) {
-                    console.log(e);
-                }
-            };
-
-            /**
-             * Methods
-             */
-            Modal.prototype.show = function () {
-                var self = this;
-                // adding backdrop (transparent background) behind the modal
-                if (self.options.backdrop) {
-                    var backdrop = document.getElementById('bs.backdrop');
-                    if (backdrop === null) {
-                        backdrop = document.createElement('div');
-                        backdrop.id = "bs.backdrop";
-                        backdrop.className = "modal-backdrop fade in";
-                        document.body.appendChild(backdrop);
-                    }
-                }
-
-                // show modal
-                this.el.classList.add('in');
-                this.el.style.display = 'block';
-                document.body.style.paddingRight = '13px';
-                document.body.classList.add('modal-open');
-            };
-
-            Modal.prototype.hide = function () {
-                var self = this;
-                // hide modal
-                this.el.classList.remove('in');
-                this.el.style.display = 'none';
-                document.body.style = '';
-                document.body.classList.remove('modal-open');
-
-                // removing backdrop
-                if (self.options.backdrop) {
-                    var backdrop = document.getElementById('bs.backdrop');
-                    if (backdrop !== null) document.body.removeChild(backdrop);
-                }
-            };
-
-
-            /* Event */
-            document.addEventListener('DOMContentLoaded', function () {
-                var m = new Modal('#MyModal', { //Jou modal ID
-                    backdrop: true
-                });
-                document.getElementById('btn-open').addEventListener('click', function (e) {    //btn-open - Jou button ID wat die modal trigger
-                    if (e) e.preventDefault();
-                    m.show();
-                });
-            });
-        })();
+        !function () { "use strict"; var e = function (e, t) { var o = this; this.el = document.querySelector(e), this.options = t; try { for (var d = document.querySelectorAll("#" + this.el.id + ' [data-dismiss="modal"]'), n = 0; n < d.length; n++) d[n].addEventListener("click", function (e) { e && e.preventDefault(), o.hide() }) } catch (i) { console.log(i) } }; e.prototype.show = function () { var e = this; if (e.options.backdrop) { var t = document.getElementById("bs.backdrop"); null === t && (t = document.createElement("div"), t.id = "bs.backdrop", t.className = "modal-backdrop fade in", document.body.appendChild(t)) } this.el.classList.add("in"), this.el.style.display = "block", document.body.style.paddingRight = "13px", document.body.classList.add("modal-open") }, e.prototype.hide = function () { var e = this; if (this.el.classList.remove("in"), this.el.style.display = "none", document.body.style = "", document.body.classList.remove("modal-open"), e.options.backdrop) { var t = document.getElementById("bs.backdrop"); null !== t && document.body.removeChild(t) } }, document.addEventListener("DOMContentLoaded", function () { var t = new e("#MyModal", { backdrop: !0 }); document.getElementById("btn-open").addEventListener("click", function (e) { e && e.preventDefault(), t.show() }) }) }();
     </script>
 </body>
 
